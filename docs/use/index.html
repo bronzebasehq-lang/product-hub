@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to use CleanTake | Bronze Base</title>
+<meta name="description" content="CleanTake workflow: drop in a noisy voice recording, local denoise runs on your machine, get a clean loudness-normalized file back. One file in, one file out.">
+<link rel="canonical" href="https://cleantake.pages.dev/docs/use/">
+<meta property="og:title" content="How to use CleanTake">
+<meta property="og:description" content="Drop in a noisy recording, get clean speech back. One file in, one file out — all local.">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+<nav class="nav"><div class="nav-inner">
+  <a class="brand" href="/">Bronze<span>Base</span></a>
+  <div class="nav-links">
+    <a href="/cleantake/">CleanTake</a>
+    <a href="/docs/use/">Docs</a>
+    <a href="/blog/">Blog</a>
+    <a href="/changelog/">Changelog</a>
+    <a class="btn btn-primary" style="padding:.45rem 1rem" href="/waitlist/" data-event="download_click" data-event-detail='{"location":"nav"}'>Get CleanTake</a>
+  </div>
+</div></nav>
+
+<main class="wrap prose">
+<p class="breadcrumb"><a href="/">home</a> / docs / use</p>
+<h1>How to use CleanTake</h1>
+<p>The whole philosophy: <strong>one file in, one file out.</strong> No timelines, no projects, no settings maze.</p>
+
+<div class="steps">
+  <div class="step"><div class="n">01</div><h3>Drop a file in</h3><p>Drag &amp; drop a WAV or MP3 of already-recorded speech — a podcast take, a voiceover, a lecture recording.</p></div>
+  <div class="step"><div class="n">02</div><h3>It cleans locally</h3><p>Steady room noise (fan, AC, hum) is removed on your machine. Nothing is uploaded anywhere.</p></div>
+  <div class="step"><div class="n">03</div><h3>Take the file out</h3><p>A loudness-normalized clean file lands next to your input, ready to publish or edit further.</p></div>
+</div>
+
+<h2>What happens under the hood</h2>
+<pre><code>input.wav ──▶ ffmpeg ──▶ DeepFilterNet ──▶ loudnorm ──▶ output.wav
+              decode      denoise (local)      normalize</code></pre>
+<ul>
+  <li><strong>ffmpeg</strong> decodes your input to a clean PCM stream.</li>
+  <li><strong>DeepFilterNet</strong> (open source — credited, not claimed as ours) removes steady environmental noise.</li>
+  <li><strong>loudnorm</strong> brings the result to a consistent loudness so it sounds right next to other audio.</li>
+</ul>
+
+<h2>Good inputs</h2>
+<ul class="tick">
+  <li class="yes">Single speaker, recorded indoors, with steady background noise (fan, AC, hum).</li>
+  <li class="yes">WAV or MP3, any reasonable length.</li>
+</ul>
+
+<h2>Bad inputs</h2>
+<ul class="tick">
+  <li class="no">Multiple people talking over each other — CleanTake can't separate voices (<a href="/docs/limits/">limits</a>).</li>
+  <li class="no">Live audio — there's no real-time mode; it processes files.</li>
+  <li class="no">Music or heavily distorted recordings — it's tuned for speech.</li>
+</ul>
+
+<p style="color:var(--muted);font-size:.9rem">Last updated: 2026-09-29.</p>
+</main>
+
+<footer><div class="wrap">
+  <a href="/privacy/">Privacy</a><a href="/docs/limits/">Limits</a><a href="/changelog/">Changelog</a>
+  <a href="https://x.com/bronzebase" data-event="outbound_github_click" data-event-detail='{"dest":"x"}'>X @bronzebase</a>
+  <span class="spacer">Bronze Base · one file in, one file out</span>
+</div></footer>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>

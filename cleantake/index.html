@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CleanTake demo — hear the before / after | Bronze Base</title>
+<meta name="description" content="Listen to a real CleanTake demo: a voice recording with fan/AC room noise, before and after local denoising. No upload, no cloud — hear the difference.">
+<!-- TODO: replace SITE_BASE (https://cleantake.pages.dev) with the real domain on deploy -->
+<link rel="canonical" href="https://cleantake.pages.dev/cleantake/">
+<meta property="og:title" content="CleanTake demo — hear the before / after">
+<meta property="og:description" content="Real voice, real room noise. Listen before and after CleanTake's local denoise — no upload, no cloud.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://cleantake.pages.dev/cleantake/">
+<link rel="stylesheet" href="/assets/css/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "CleanTake",
+  "applicationCategory": "MultimediaApplication",
+  "operatingSystem": "Windows",
+  "description": "Clean recorded speech locally — removes fan, AC and hum noise from recorded voice files. No upload, no cloud, no subscription.",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "author": { "@type": "Organization", "name": "Bronze Base", "url": "https://cleantake.pages.dev/" }
+}
+</script>
+</head>
+<body>
+<nav class="nav"><div class="nav-inner">
+  <a class="brand" href="/">Bronze<span>Base</span></a>
+  <div class="nav-links">
+    <a href="/cleantake/">CleanTake</a>
+    <a href="/docs/use/">Docs</a>
+    <a href="/blog/">Blog</a>
+    <a href="/changelog/">Changelog</a>
+    <a class="btn btn-primary" style="padding:.45rem 1rem" href="/waitlist/" data-event="download_click" data-event-detail='{"location":"nav"}'>Get CleanTake</a>
+  </div>
+</div></nav>
+
+<main class="wrap">
+<p class="breadcrumb"><a href="/">home</a> / cleantake</p>
+<section class="hero" style="padding-top:2rem">
+  <div class="tagline">$ press play — trust your ears</div>
+  <h1>Hear what CleanTake does</h1>
+  <p class="lead">One real voice recording with real room noise. Switch between <strong>before</strong> and <strong>after</strong> — same take, processed locally on a regular machine.</p>
+</section>
+
+<div class="player">
+  <div class="player-tabs">
+    <button class="tab before-tab active" data-target="pane-before">◉ BEFORE — noisy</button>
+    <button class="tab after-tab" data-target="pane-after">◉ AFTER — CleanTake</button>
+  </div>
+  <div class="player-pane" id="pane-before">
+    <audio controls preload="metadata" data-event="sample_play" data-event-detail='{"sample":"before","location":"cleantake"}'>
+      <source src="/assets/audio/realvoice_env_before.mp3" type="audio/mpeg">
+      Your browser can't play this audio. <a href="/assets/audio/realvoice_env_before.mp3">Download the before sample (MP3)</a>.
+    </audio>
+  </div>
+  <div class="player-pane" id="pane-after" hidden>
+    <audio controls preload="metadata" data-event="sample_play" data-event-detail='{"sample":"after","location":"cleantake"}'>
+      <source src="/assets/audio/realvoice_env_after.mp3" type="audio/mpeg">
+      Your browser can't play this audio. <a href="/assets/audio/realvoice_env_after.mp3">Download the after sample (MP3)</a>.
+    </audio>
+  </div>
+  <dl class="sample-meta">
+    <dt>Noise type</dt><dd>Steady environmental room noise (fan / AC-type hum) — the exact case CleanTake is built for.</dd>
+    <dt>Tested</dt><dd>2026-09-28 · pipeline: ffmpeg → DeepFilterNet → loudness normalization</dd>
+    <dt>Result</dt><dd>≈ 32 dB environmental noise reduction, voice preserved (measured on this sample; your mileage varies with the room).</dd>
+    <dt>Formats</dt><dd>MP3 samples; engine tested on WAV/MP3 inputs.</dd>
+  </dl>
+</div>
+
+<section class="card honest">
+  <h3>What this demo does NOT prove</h3>
+  <ul class="tick">
+    <li class="no"><span class="limit-no">Not</span> a café test — overlapping voices are a different problem and CleanTake doesn't solve it (see <a href="/docs/limits/">limits</a>).</li>
+    <li class="no"><span class="limit-no">Not</span> real-time — this is file processing, not live call cleanup.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>How it works under the hood</h2>
+  <pre><code>input.wav ──▶ ffmpeg ──▶ DeepFilterNet ──▶ loudnorm ──▶ output.wav
+              decode      denoise (local)      normalize</code></pre>
+  <p>DeepFilterNet is open source — we credit the original project and don't claim the core tech as ours. CleanTake's value is the packaging: a simple local workflow around a proven engine, free forever. Details in <a href="/docs/use/">how to use</a>.</p>
+</section>
+
+<section>
+  <h2>Want it on your machine?</h2>
+  <p>CleanTake is in private testing. Join the waitlist and we'll notify you when the first public build is ready.</p>
+  <div class="btn-row">
+    <a class="btn btn-primary" href="/waitlist/" data-event="download_click" data-event-detail='{"location":"cleantake-cta"}'>Join the waitlist — free</a>
+    <a class="btn btn-ghost" href="/docs/limits/">Read the limits first</a>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap">
+  <a href="/privacy/">Privacy</a><a href="/docs/limits/">Limits</a><a href="/changelog/">Changelog</a>
+  <a href="https://x.com/bronzebase" data-event="outbound_github_click" data-event-detail='{"dest":"x"}'>X @bronzebase</a>
+  <span class="spacer">Bronze Base · one file in, one file out</span>
+</div></footer>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>

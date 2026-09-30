@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Free local audio denoiser: clean voice recordings without uploading | Bronze Base</title>
+<meta name="description" content="CleanTake removes steady room noise from voice recordings on your own computer — no upload, no account. Listen to a real before/after test (25 s, ≈32 dB noise cut) and read the exact method.">
+<link rel="canonical" href="https://cleantake.pages.dev/blog/free-local-audio-denoiser/">
+<meta property="og:title" content="Free local audio denoiser: clean voice recordings without uploading">
+<meta property="og:description" content="Real before/after demo. Runs 100% local — no upload, no cloud, no subscription.">
+<meta property="og:type" content="article">
+<link rel="stylesheet" href="/assets/css/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Free local audio denoiser: clean voice recordings without uploading",
+  "description": "CleanTake removes steady room noise from voice recordings on your own computer — no upload, no account. Listen to a real before/after test (25 s, ≈32 dB noise cut) and read the exact method.",
+  "author": {"@type": "Person", "name": "Bronze"},
+  "publisher": {"@type": "Organization", "name": "Bronze Base", "url": "https://cleantake.pages.dev/"},
+  "datePublished": "2026-10-01",
+  "dateModified": "2026-10-01",
+  "mainEntityOfPage": {"@type": "WebPage", "@id": "https://cleantake.pages.dev/blog/free-local-audio-denoiser/"},
+  "inLanguage": "en"
+}
+</script>
+</head>
+<body>
+<nav class="nav"><div class="nav-inner">
+  <a class="brand" href="/">Bronze<span>Base</span></a>
+  <div class="nav-links">
+    <a href="/cleantake/">CleanTake</a>
+    <a href="/docs/install/">Install</a>
+    <a href="/docs/use/">Use</a>
+    <a href="/docs/limits/">Limits</a>
+    <a href="/blog/">Blog</a>
+    <a href="/changelog/">Changelog</a>
+    <a class="btn btn-primary" style="padding:.45rem 1rem" href="/waitlist/" data-event="download_click" data-event-detail='{"location":"nav","page":"blog/free-local-audio-denoiser"}'>Get CleanTake</a>
+  </div>
+</div></nav>
+
+<main class="wrap prose">
+<p class="breadcrumb"><a href="/">home</a> / <a href="/blog/">blog</a> / free-local-audio-denoiser</p>
+
+<h1>Free local audio denoiser: clean voice recordings without uploading</h1>
+<p class="form-note" style="font-family:var(--mono)">By Bronze · October 1, 2026 · 4 min read</p>
+
+<p>CleanTake removes steady room noise — fan, air-conditioner hum — from recorded voice files, entirely on your computer. No upload, no account, no subscription. On a real 25-second recording tested September 28, 2026, it cut environmental noise by about 32&nbsp;dB while the voice stayed intact. It cannot separate overlapping voices, and there is no public download yet — join the waitlist for the first build.</p>
+
+<div class="btn-row">
+  <a class="btn btn-primary" href="/waitlist/" data-event="download_click" data-event-detail='{"location":"article-top","page":"blog/free-local-audio-denoiser"}'>Join the waitlist — free</a>
+</div>
+
+<h2>Does it actually work? Listen to the same 25 seconds, before and after</h2>
+<p>One take, one voice, recorded in a room with a fan running. The <strong>before</strong> file is the raw recording. The <strong>after</strong> file is the same take cleaned by the <a href="/cleantake/">CleanTake</a> pipeline. Listen to the steady hum underneath the voice in the first clip, and how much of it survives in the second.</p>
+<div class="player">
+  <div class="player-tabs">
+    <button class="tab active before-tab" type="button" data-target="pane-before">Before — raw</button>
+    <button class="tab after-tab" type="button" data-target="pane-after">After — cleaned</button>
+  </div>
+  <div class="player-pane" id="pane-before">
+    <audio controls preload="none" src="/assets/audio/realvoice_env_before.mp3" data-event="sample_play" data-event-detail='{"sample":"realvoice_env_before","page":"blog/free-local-audio-denoiser"}'></audio>
+  </div>
+  <div class="player-pane" id="pane-after" hidden>
+    <audio controls preload="none" src="/assets/audio/realvoice_env_after.mp3" data-event="sample_play" data-event-detail='{"sample":"realvoice_env_after","page":"blog/free-local-audio-denoiser"}'></audio>
+  </div>
+  <p class="sample-meta">Noise type: fan / air-con hum · Test 2026-09-28, re-checked 2026-09-30 · Engine DeepFilterNet 0.5.6 · ffmpeg 8.1.2 · 25.0 s each, WAV → MP3 · Linux CPU (public build targets Windows)</p>
+</div>
+<p>What to listen for: in the before clip, the hum sits behind the voice at a near-constant level — it never pauses. In the after clip, the voice keeps its tone and pacing, but the hum drops out of the pauses between sentences. Nothing was re-recorded, re-acted, or sweetened.</p>
+
+<h2>What kind of noise does it remove — and what can't it do?</h2>
+<div class="card">
+  <h3><span class="limit-yes">It handles</span></h3>
+  <ul class="tick">
+    <li class="yes">Steady room noise: fans, air-conditioners, electrical hum</li>
+    <li class="yes">Hiss from cheap microphones and interfaces</li>
+    <li class="yes">Voice recordings where the speaker is the only voice</li>
+  </ul>
+</div>
+<div class="card honest">
+  <h3><span class="limit-no">It can't do (yet)</span></h3>
+  <ul class="tick">
+    <li class="no"><strong>Overlapping voices.</strong> In a café-style test with four people talking over each other, it reduced everything evenly — voice included. It does not separate one voice from a crowd.</li>
+    <li class="no"><strong>Real-time calls.</strong> It processes recorded files, not live audio. It is not a Krisp replacement for Zoom.</li>
+    <li class="no"><strong>Music.</strong> It is tuned for speech; singing and instruments are not its job.</li>
+  </ul>
+  <p><a href="/docs/limits/">Full limits page →</a></p>
+</div>
+<p>The honest version is the short one: CleanTake is a cleaner for <em>environmental</em> noise, not a separator for <em>human</em> noise. If your problem is a noisy room and a single speaker, that's exactly the case it passed. Everything else is on the limits page, including the failed café test.</p>
+
+<h2>Why clean audio locally instead of using a free online tool?</h2>
+<p>Free options exist, but they each cost something that isn't money. Checked September 30, 2026:</p>
+<table>
+  <thead><tr><th></th><th>CleanTake</th><th>MyEdit (online)</th><th>sibilsoren/audio-denoiser (GitHub)</th></tr></thead>
+  <tbody>
+    <tr><td>Where processing happens</td><td>Your machine</td><td>Your browser (per their FAQ)</td><td>Your machine</td></tr>
+    <tr><td>Account to download the result</td><td>No (waitlist for the build)</td><td>Yes — 1 free download per day</td><td>No</td></tr>
+    <tr><td>Setup</td><td>Installer in testing</td><td>None</td><td>Python 3.11 + FFmpeg, terminal commands</td></tr>
+    <tr><td>Measured before/after proof on the page</td><td>Yes — above</td><td>Sample player, no method published</td><td>Before/after player inside the app</td></tr>
+  </tbody>
+</table>
+<p>The pattern: cloud tools gate downloads behind sign-ins and daily limits; open-source repos work but demand a terminal. CleanTake's bet is the gap in the middle — proof-first page, one-click installer, your files never leaving the room. That installer is what's being tested now, which is why the waitlist exists instead of a download button.</p>
+
+<h2>How was this tested? Exact method, versions, and numbers</h2>
+<p>No cherry-picking claims without a method. Here is everything needed to reproduce the result:</p>
+<ul>
+  <li><strong>Source:</strong> a real 25.0-second voice recording in a room with fan/air-con hum (MP3, 400&nbsp;KB, 48&nbsp;kHz mono). Not synthesized, not re-recorded.</li>
+  <li><strong>Pipeline:</strong> ffmpeg → DeepFilterNet 0.5.6 → loudness normalize to −16&nbsp;LUFS (I=−16, TP=−1.5, LRA=11). Output: MP3, 601&nbsp;KB.</li>
+  <li><strong>Result:</strong> environmental noise reduced by <strong>≈32&nbsp;dB</strong>, voice preserved — measured on this sample, 2026-09-28. Your mileage varies with the room.</li>
+  <li><strong>Speed:</strong> the full pipeline processed this 25-second clip in <strong>about 5 seconds</strong> on a standard CPU with no GPU (timed 2026-09-30, Linux test machine).</li>
+  <li><strong>Re-check 2026-09-30:</strong> an independent measurement of the noise floor in two speech pauses (ffmpeg volumedetect) showed the floor dropping from −33.0&nbsp;dB to −51.1/−59.3&nbsp;dB — an 18–26&nbsp;dB reduction under a different, stricter metric. The ≈32&nbsp;dB figure is the original full-sample measurement; both are published so you can see the method matters.</li>
+  <li><strong>Voice preservation:</strong> a listening assessment (the voice sounds the same), not a lab metric — labeled as such.</li>
+</ul>
+<p>The pipeline is the same one documented on <a href="/cleantake/">how CleanTake works</a>, and the failure cases are on <a href="/docs/limits/">the limits page</a>.</p>
+
+<h2>Who is this for — and who should skip it?</h2>
+<ul>
+  <li><strong>Podcasters and voiceover folks</strong> recording at home with untreated rooms — fan and AC noise is the single most common complaint.</li>
+  <li><strong>Anyone shipping voice notes, course audio, or narration</strong> who wants a free local option without uploading client audio to a server.</li>
+  <li><strong>Skip it if</strong> your audio has multiple people talking over each other, or you need real-time noise removal on live calls.</li>
+</ul>
+
+<h2>Get CleanTake</h2>
+<p>There is no download yet — the installer is in testing and the waitlist is how you get the first build. One email at launch, unsubscribe anytime, no spam. <a href="/docs/use/">How to use it</a> and <a href="/docs/install/">install</a> are already written; the build is what's missing.</p>
+<div class="btn-row">
+  <a class="btn btn-primary" href="/waitlist/" data-event="download_click" data-event-detail='{"location":"article-end","page":"blog/free-local-audio-denoiser"}'>Join the waitlist — free</a>
+  <a class="btn btn-ghost" href="https://github.com/Rikorose/DeepFilterNet" data-event="outbound_github_click" data-event-detail='{"target":"deepfilternet-repo","page":"blog/free-local-audio-denoiser"}'>DeepFilterNet on GitHub</a>
+</div>
+
+<p class="form-note">Competing products named above were checked 2026-09-30 and described as found. CleanTake is in pre-release: features, formats, and platform support may change before launch.</p>
+
+</main>
+
+<footer><div class="wrap">
+  <a href="/privacy/">Privacy</a><a href="/docs/limits/">Limits</a><a href="/changelog/">Changelog</a>
+  <a href="https://x.com/bronzebase" data-event="outbound_github_click" data-event-detail='{"dest":"x"}'>X @bronzebase</a>
+  <span class="spacer">Bronze Base · one file in, one file out</span>
+</div></footer>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>
+
+<!--
+LOG — article 01
+- URL: /blog/free-local-audio-denoiser/
+- Written: 2026-09-30 · datePublished/dateModified: 2026-10-01 (per 90-day plan, Day 3)
+- Primary query: "free local audio denoiser" (secondary: "offline audio noise reduction app")
+- SERP check 2026-09-30: gap = no page with listenable A/B + public numbers + honest limits; OSS needs build-from-source, cloud tools gate downloads
+- Numbers used: DeepFilterNet 0.5.6, ffmpeg 8.1.2, 25.0 s files (before 400 KB / after 601 KB), loudnorm I=-16:TP=-1.5:LRA=11, ≈32 dB (2026-09-28 test), re-check 2026-09-30 (18–26 dB pause floor, volumedetect), pipeline ≈5 s on CPU no GPU
+- CTA: waitlist only (single). No download button anywhere.
+- Events wired: sample_play (both audio elements), download_click (nav + 2 CTA buttons), outbound_github_click (DeepFilterNet repo + X links); waitlist_submit fires on /waitlist/ form
+- Competitor claims checked 2026-09-30, described as found
+-->

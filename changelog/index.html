@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Changelog — CleanTake | Bronze Base</title>
+<meta name="description" content="CleanTake changelog: every version, what changed, what broke, and what's next. Public build history of the free local-first audio denoiser.">
+<link rel="canonical" href="https://cleantake.pages.dev/changelog/">
+<meta property="og:title" content="Changelog — CleanTake">
+<meta property="og:description" content="Every version, what changed, what broke, what's next.">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+<nav class="nav"><div class="nav-inner">
+  <a class="brand" href="/">Bronze<span>Base</span></a>
+  <div class="nav-links">
+    <a href="/cleantake/">CleanTake</a>
+    <a href="/docs/use/">Docs</a>
+    <a href="/blog/">Blog</a>
+    <a href="/changelog/">Changelog</a>
+    <a class="btn btn-primary" style="padding:.45rem 1rem" href="/waitlist/" data-event="download_click" data-event-detail='{"location":"nav"}'>Get CleanTake</a>
+  </div>
+</div></nav>
+
+<main class="wrap prose">
+<p class="breadcrumb"><a href="/">home</a> / changelog</p>
+<h1>Changelog</h1>
+<p>What shipped, what broke, what's next. Newest first.</p>
+
+<div class="card">
+  <h2 style="margin-top:0">v0.1.0 <span class="badge">private testing</span></h2>
+  <p class="form-note" style="font-family:var(--mono)">2026-09-28</p>
+  <ul>
+    <li><strong>Built the MVP pipeline:</strong> ffmpeg → DeepFilterNet → loudness normalization, with a local drag-and-drop web UI.</li>
+    <li><strong>Real-voice test passed:</strong> steady environmental noise (fan/AC-type hum) reduced by ≈ 32 dB, voice preserved. <a href="/cleantake/">Hear the samples</a>.</li>
+    <li><strong>Documented a hard limit:</strong> 4 overlapping voices in a café-style mix could not be separated — engine reduces voices and noise evenly. Kept as a public limit on the <a href="/docs/limits/">limits page</a>, not hidden.</li>
+  </ul>
+  <p><strong>Known issues:</strong> no public installer yet; batch mode not built; Windows only for first release.</p>
+</div>
+
+<div class="card">
+  <h2 style="margin-top:0">Up next</h2>
+  <ul>
+    <li>Batch mode — denoise a folder of files in one go.</li>
+    <li>"Room noise" preset tuned from real user samples.</li>
+    <li>Windows installer (no admin rights needed).</li>
+  </ul>
+  <p class="form-note">We only announce a feature here after it actually works — never before.</p>
+</div>
+</main>
+
+<footer><div class="wrap">
+  <a href="/privacy/">Privacy</a><a href="/docs/limits/">Limits</a><a href="/changelog/">Changelog</a>
+  <a href="https://x.com/bronzebase" data-event="outbound_github_click" data-event-detail='{"dest":"x"}'>X @bronzebase</a>
+  <span class="spacer">Bronze Base · one file in, one file out</span>
+</div></footer>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>

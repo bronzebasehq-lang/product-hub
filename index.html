@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CleanTake — Clean recorded speech locally, no upload | Bronze Base</title>
+<meta name="description" content="CleanTake removes fan, AC and hum noise from recorded voice files — 100% on your machine. No upload, no cloud, no subscription. Free local-first audio cleanup.">
+<!-- TODO: replace SITE_BASE (https://cleantake.pages.dev) with the real domain on deploy -->
+<link rel="canonical" href="https://cleantake.pages.dev/">
+<meta property="og:title" content="CleanTake — Clean recorded speech locally, no upload">
+<meta property="og:description" content="Remove fan, AC and hum noise from recorded voice. Runs 100% on your machine — no cloud, no subscription.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://cleantake.pages.dev/">
+<link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+<nav class="nav"><div class="nav-inner">
+  <a class="brand" href="/">Bronze<span>Base</span></a>
+  <div class="nav-links">
+    <a href="/cleantake/">CleanTake</a>
+    <a href="/docs/use/">Docs</a>
+    <a href="/blog/">Blog</a>
+    <a href="/changelog/">Changelog</a>
+    <a class="btn btn-primary" style="padding:.45rem 1rem" href="/waitlist/" data-event="download_click" data-event-detail='{"location":"nav"}'>Get CleanTake</a>
+  </div>
+</div></nav>
+
+<main class="wrap">
+<section class="hero">
+  <div class="tagline">$ one file in, one file out</div>
+  <h1>CleanTake</h1>
+  <p class="lead" style="font-size:1.35rem;color:var(--text)"><strong>Clean recorded speech locally — no upload.</strong></p>
+  <p class="lead">Drop in a noisy voice recording. Get back clean speech. Everything runs on your machine — your audio never touches a server, and there's no monthly tab.</p>
+  <div class="btn-row">
+    <a class="btn btn-primary" href="/cleantake/" data-event="sample_play" data-event-detail='{"location":"hero"}'>Hear the before / after</a>
+    <a class="btn btn-ghost" href="/waitlist/" data-event="download_click" data-event-detail='{"location":"hero"}'>Join the waitlist</a>
+  </div>
+</section>
+
+<section>
+  <h2>What it does</h2>
+  <div class="steps">
+    <div class="step"><div class="n">01</div><h3>Drop a file</h3><p>WAV or MP3 of already-recorded speech — a podcast take, a voiceover, a lecture.</p></div>
+    <div class="step"><div class="n">02</div><h3>Local denoise</h3><p>Fan hum, air-conditioner drone and steady room noise are stripped out on your CPU. Nothing is uploaded.</p></div>
+    <div class="step"><div class="n">03</div><h3>Get clean audio</h3><p>Loudness-normalized output lands next to your input. One file in, one file out.</p></div>
+  </div>
+</section>
+
+<section class="card honest">
+  <h3>Honest scope — read before you try</h3>
+  <ul class="tick">
+    <li class="yes"><span class="limit-yes">Removes</span> steady environmental noise: fans, air-conditioners, electrical hum, room tone.</li>
+    <li class="yes"><span class="limit-yes">Works on</span> already-recorded files (podcasts, voiceovers, online lessons).</li>
+    <li class="no"><span class="limit-no">Does NOT</span> separate overlapping speakers — it can't pull one voice out of a crowded café.</li>
+    <li class="no"><span class="limit-no">Is NOT</span> a real-time call tool — it processes files, not live meetings.</li>
+  </ul>
+  <p style="color:var(--muted);font-size:.95rem">We publish our limits on the <a href="/docs/limits/">limits page</a> and keep a public <a href="/changelog/">changelog</a>. If your use case is outside this scope, CleanTake isn't the tool — and we'd rather tell you now.</p>
+</section>
+
+<section>
+  <h2>Why local-first?</h2>
+  <p>Cloud audio tools charge a monthly subscription and require you to upload your voice to someone else's server. CleanTake does the job on your own machine: <strong>private by architecture, free by design.</strong> No account, no telemetry (see our <a href="/privacy/">privacy note</a>).</p>
+  <p style="color:var(--muted);font-size:.95rem">Competitor pricing and features change often — anything we compare is re-checked on the day of publishing, never treated as permanent data.</p>
+</section>
+
+<section>
+  <h2>Status</h2>
+  <p>CleanTake is in private testing. The core pipeline (ffmpeg → DeepFilterNet → loudness normalization) is built and passed a real-voice test: ~32&nbsp;dB of environmental noise removed, voice preserved. <a href="/changelog/">See the changelog</a>.</p>
+  <div class="btn-row">
+    <a class="btn btn-primary" href="/waitlist/" data-event="download_click" data-event-detail='{"location":"status"}'>Join the waitlist — free</a>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap">
+  <a href="/privacy/">Privacy</a><a href="/docs/limits/">Limits</a><a href="/changelog/">Changelog</a>
+  <a href="https://x.com/bronzebase" data-event="outbound_github_click" data-event-detail='{"dest":"x"}'>X @bronzebase</a>
+  <span class="spacer">Bronze Base · one file in, one file out</span>
+</div></footer>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>

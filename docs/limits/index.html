@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CleanTake limits — what it can and can't do | Bronze Base</title>
+<meta name="description" content="Honest limits of CleanTake: removes steady environmental noise (fan, AC, hum) from recorded speech. Does not separate overlapping speakers. Not a real-time call tool.">
+<link rel="canonical" href="https://cleantake.pages.dev/docs/limits/">
+<meta property="og:title" content="CleanTake limits — what it can and can't do">
+<meta property="og:description" content="The honest scope: environmental noise removal for recorded speech. No overlapping-speaker separation, no real-time calls.">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+<nav class="nav"><div class="nav-inner">
+  <a class="brand" href="/">Bronze<span>Base</span></a>
+  <div class="nav-links">
+    <a href="/cleantake/">CleanTake</a>
+    <a href="/docs/use/">Docs</a>
+    <a href="/blog/">Blog</a>
+    <a href="/changelog/">Changelog</a>
+    <a class="btn btn-primary" style="padding:.45rem 1rem" href="/waitlist/" data-event="download_click" data-event-detail='{"location":"nav"}'>Get CleanTake</a>
+  </div>
+</div></nav>
+
+<main class="wrap prose">
+<p class="breadcrumb"><a href="/">home</a> / <a href="/docs/use/">docs</a> / limits</p>
+<h1>Limits</h1>
+<p>We'd rather lose a download than gain a disappointed user. Here's exactly where CleanTake stops working.</p>
+
+<h2>What CleanTake handles</h2>
+<ul class="tick">
+  <li class="yes"><span class="limit-yes">Steady environmental noise</span> — fans, air-conditioners, electrical hum, constant room tone.</li>
+  <li class="yes"><span class="limit-yes">Recorded speech files</span> — podcasts, voiceovers, online lessons, already-recorded interviews.</li>
+</ul>
+
+<h2>What CleanTake does NOT handle</h2>
+<ul class="tick">
+  <li class="no"><span class="limit-no">Overlapping speakers.</span> We tested it: with several voices talking over each other (a busy café), the engine reduces everything evenly — voices included. It cannot isolate one voice from a crowd. This is a different research problem and we don't pretend otherwise.</li>
+  <li class="no"><span class="limit-no">Real-time calls.</span> CleanTake processes files after recording. It is not a live meeting noise-cancellation tool.</li>
+  <li class="no"><span class="limit-no">Music or extreme distortion.</span> The engine is tuned for speech; feeding it music gives unpredictable results.</li>
+  <li class="no"><span class="limit-no">Perfect silence.</span> Noise reduction is a trade-off — push it too far and speech starts to sound watery. We keep the default conservative.</li>
+</ul>
+
+<h2>Tested configurations</h2>
+<table>
+  <tr><th>Item</th><th>Status</th></tr>
+  <tr><td>Environmental room noise (fan/AC hum), real voice</td><td>✅ Tested 2026-09-28 — ≈ 32 dB reduction, voice preserved</td></tr>
+  <tr><td>Café with 4 overlapping voices</td><td>❌ Failed as expected — documented as a hard limit</td></tr>
+  <tr><td>Input formats</td><td>WAV / MP3 tested</td></tr>
+  <tr><td>Batch mode</td><td>⏳ In progress — not in the first build</td></tr>
+  <tr><td>macOS / Linux</td><td>⏳ Not planned for first release</td></tr>
+</table>
+
+<p>If your use case is outside this scope, CleanTake isn't your tool — and that's fine. We publish failures alongside wins in the <a href="/changelog/">changelog</a>.</p>
+<p style="color:var(--muted);font-size:.9rem">Last updated: 2026-09-29.</p>
+</main>
+
+<footer><div class="wrap">
+  <a href="/privacy/">Privacy</a><a href="/docs/limits/">Limits</a><a href="/changelog/">Changelog</a>
+  <a href="https://x.com/bronzebase" data-event="outbound_github_click" data-event-detail='{"dest":"x"}'>X @bronzebase</a>
+  <span class="spacer">Bronze Base · one file in, one file out</span>
+</div></footer>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>

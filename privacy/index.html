@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy — local-first by architecture | Bronze Base</title>
+<meta name="description" content="CleanTake privacy: your audio never leaves your machine. No upload, no cloud processing, no telemetry, no account. What local-first actually means here.">
+<link rel="canonical" href="https://cleantake.pages.dev/privacy/">
+<meta property="og:title" content="Privacy — local-first by architecture">
+<meta property="og:description" content="Your audio never leaves your machine. No upload, no telemetry, no account.">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+<nav class="nav"><div class="nav-inner">
+  <a class="brand" href="/">Bronze<span>Base</span></a>
+  <div class="nav-links">
+    <a href="/cleantake/">CleanTake</a>
+    <a href="/docs/use/">Docs</a>
+    <a href="/blog/">Blog</a>
+    <a href="/changelog/">Changelog</a>
+    <a class="btn btn-primary" style="padding:.45rem 1rem" href="/waitlist/" data-event="download_click" data-event-detail='{"location":"nav"}'>Get CleanTake</a>
+  </div>
+</div></nav>
+
+<main class="wrap prose">
+<p class="breadcrumb"><a href="/">home</a> / privacy</p>
+<h1>Privacy</h1>
+<p><strong>Your audio never leaves your machine.</strong> That's not a policy promise — it's how the software is built. Denoising runs locally on your CPU; there is no server to upload to.</p>
+
+<h2>What we collect: nothing</h2>
+<ul class="tick">
+  <li class="no"><span class="limit-no">No</span> audio uploads — processing is 100% local.</li>
+  <li class="no"><span class="limit-no">No</span> telemetry, crash reports, or usage analytics inside the app.</li>
+  <li class="no"><span class="limit-no">No</span> account, no sign-in, no license phone-home.</li>
+</ul>
+
+<h2>What the website collects</h2>
+<ul>
+  <li><strong>Waitlist emails</strong> — only if you join the waitlist. Used for one launch email. Never sold, never shared.</li>
+  <li><strong>Anonymous page events</strong> (sample plays, button clicks) — currently logged to the browser console only during testing; when real analytics is connected it will be a privacy-friendly, cookieless provider. No cross-site tracking, ever.</li>
+</ul>
+
+<h2>What we haven't audited</h2>
+<p>Honesty cut both ways: the third-party engine (DeepFilterNet) is open source and we ship it as-is. We have not performed an independent security audit of every dependency. If that matters to you, the open-source engine means you — or anyone — can verify it.</p>
+
+<p style="color:var(--muted);font-size:.9rem">Last updated: 2026-09-29. Contact: via <a href="https://x.com/bronzebase">X @bronzebase</a>.</p>
+</main>
+
+<footer><div class="wrap">
+  <a href="/privacy/">Privacy</a><a href="/docs/limits/">Limits</a><a href="/changelog/">Changelog</a>
+  <a href="https://x.com/bronzebase" data-event="outbound_github_click" data-event-detail='{"dest":"x"}'>X @bronzebase</a>
+  <span class="spacer">Bronze Base · one file in, one file out</span>
+</div></footer>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>
