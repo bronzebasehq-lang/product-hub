@@ -14,7 +14,7 @@ python3 -m http.server 8080
 ## Before deploying — 2 things
 
 1. **Domain.** Every `canonical`, `og:url`, `sitemap.xml` and JSON-LD block uses the
-   placeholder `https://cleantake.pages.dev`. Find/replace it with the real domain
+   placeholder `https://cleantake.bronzebasehq.workers.dev`. Find/replace it with the real domain
    (see the `TODO: replace SITE_BASE` comments). Plan says: no custom domain until
    the funnel shows signal — the free `*.pages.dev` URL is fine for now.
 2. **Waitlist.** The form on `/waitlist/` is UI-only (no backend, $0 budget).

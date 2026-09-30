@@ -9,7 +9,7 @@
 
 ### Phương án A — Cloudflare Pages (Rio khuyên dùng)
 
-Vì sao: web đã được viết sẵn với địa chỉ `cleantake.pages.dev`, host ở đây thì không phải sửa gì thêm. Miễn phí, không cần thẻ ngân hàng, mỗi lần cập nhật code là web tự deploy lại.
+Vì sao: web đã được viết sẵn với địa chỉ `cleantake.bronzebasehq.workers.dev`, host ở đây thì không phải sửa gì thêm. Miễn phí, không cần thẻ ngân hàng, mỗi lần cập nhật code là web tự deploy lại.
 
 **Minh làm (khoảng 15 phút):**
 
@@ -20,12 +20,12 @@ Vì sao: web đã được viết sẵn với địa chỉ `cleantake.pages.dev`
    - **Cách 2 (tự làm):** tải file zip của Rio về máy → **giải nén** → vào repo → link "uploading an existing file" → kéo thả TOÀN BỘ file/thư mục đã giải nén vào (kể cả thư mục ẩn `.github`).
 4. Vào Cloudflare dashboard → menu trái **Workers & Pages** → **Create** → tab **Pages** → **Connect to Git** → cho phép Cloudflare đọc GitHub → chọn repo `product-hub` → **Begin setup**.
 5. Điền build settings đúng như sau:
-   - **Project name:** `cleantake` (để được địa chỉ `cleantake.pages.dev`)
+   - **Project name:** `cleantake` (để được địa chỉ `cleantake.bronzebasehq.workers.dev`)
    - **Production branch:** `main`
    - **Framework preset:** None
    - **Build command:** để trống
    - **Build output directory:** `/`
-6. Bấm **Save and Deploy**. Khoảng 30 giây sau web sẽ live tại `https://cleantake.pages.dev` — mở lên kiểm tra.
+6. Bấm **Save and Deploy**. Khoảng 30 giây sau web sẽ live tại `https://cleantake.bronzebasehq.workers.dev` — mở lên kiểm tra.
 
 Từ nay mỗi lần Rio sửa web, Minh chỉ cần upload file mới lên GitHub repo → Cloudflare tự deploy lại.
 
@@ -49,7 +49,7 @@ Vì sao: không cần tạo tài khoản Cloudflare, mọi thứ nằm gọn tro
 **Minh làm (khoảng 10 phút):**
 
 1. Vào **search.google.com/search-console** → đăng nhập Google.
-2. Bấm **Add property** (hoặc menu dropdown góc trái) → chọn **URL prefix** (KHÔNG chọn Domain) → nhập đúng địa chỉ web (vd `https://cleantake.pages.dev`) → **Continue**.
+2. Bấm **Add property** (hoặc menu dropdown góc trái) → chọn **URL prefix** (KHÔNG chọn Domain) → nhập đúng địa chỉ web (vd `https://cleantake.bronzebasehq.workers.dev`) → **Continue**.
 3. Google hiện các cách xác minh — chọn tab **HTML tag**. Google sẽ đưa 1 dòng meta tag, trông như:
    `<meta name="google-site-verification" content="abc123..." />`
 4. **Copy nguyên dòng đó gửi cho Rio.** Rio sẽ gắn vào web và deploy lại (Minh không cần đụng vào file).
