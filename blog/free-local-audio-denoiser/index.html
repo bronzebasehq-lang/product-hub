@@ -35,7 +35,7 @@
     <a href="/docs/limits/">Limits</a>
     <a href="/blog/">Blog</a>
     <a href="/changelog/">Changelog</a>
-    <a class="btn btn-primary" style="padding:.45rem 1rem" href="/waitlist/" data-event="download_click" data-event-detail='{"location":"nav","page":"blog/free-local-audio-denoiser"}'>Get CleanTake</a>
+    <a class="btn btn-primary" style="padding:.45rem 1rem" href="https://github.com/bronzebasehq-lang/cleantake/releases/tag/v1.0.1" data-event="download_click" data-event-detail='{"location":"nav","page":"blog/free-local-audio-denoiser"}'>Get CleanTake</a>
   </div>
 </div></nav>
 
@@ -48,7 +48,7 @@
 <p>CleanTake removes steady room noise — fan, air-conditioner hum — from recorded voice files, entirely on your computer. No upload, no account, no subscription. On a real 25-second recording tested September 28, 2026, it cut environmental noise by about 32&nbsp;dB while the voice stayed intact. It cannot separate overlapping voices, and since October 2, 2026, there’s a free public download — a portable ZIP or one-click installer for Windows.</p>
 
 <div class="btn-row">
-  <a class="btn btn-primary" href="/waitlist/" data-event="download_click" data-event-detail='{"location":"article-top","page":"blog/free-local-audio-denoiser"}'>Join the waitlist — free</a>
+  <a class="btn btn-primary" href="https://github.com/bronzebasehq-lang/cleantake/releases/tag/v1.0.1" data-event="download_click" data-event-detail='{"location":"article-top","page":"blog/free-local-audio-denoiser"}'>Download v1.0.1 — free</a>
 </div>
 
 <h2>Does it actually work? Listen to the same 25 seconds, before and after</h2>
@@ -147,7 +147,7 @@ LOG — article 01
 - Primary query: "free local audio denoiser" (secondary: "offline audio noise reduction app")
 - SERP check 2026-09-30: gap = no page with listenable A/B + public numbers + honest limits; OSS needs build-from-source, cloud tools gate downloads
 - Numbers used: DeepFilterNet 0.5.6, ffmpeg 8.1.2, 25.0 s files (before 400 KB / after 601 KB), loudnorm I=-16:TP=-1.5:LRA=11, noise floor −33dB → −59dB (2026-09-28 test), re-check 2026-09-30 (18–26 dB pause floor, volumedetect), pipeline ≈5 s on CPU no GPU
-- CTA: waitlist only (single). No download button anywhere.
-- Events wired: sample_play (both audio elements), download_click (nav + 2 CTA buttons), outbound_github_click (DeepFilterNet repo + X links); waitlist_submit fires on /waitlist/ form
+- CTA: download v1.0.1 (updated 2026-10-07; was waitlist-only before first public release).
+- Events wired: sample_play (both audio elements), download_click (nav + 2 CTA buttons), outbound_github_click (DeepFilterNet repo + X links)
 - Competitor claims checked 2026-09-30, described as found
 -->

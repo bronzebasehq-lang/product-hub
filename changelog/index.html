@@ -19,7 +19,7 @@
     <a href="/docs/use/">Docs</a>
     <a href="/blog/">Blog</a>
     <a href="/changelog/">Changelog</a>
-    <a class="btn btn-primary" style="padding:.45rem 1rem" href="/waitlist/" data-event="download_click" data-event-detail='{"location":"nav"}'>Get CleanTake</a>
+    <a class="btn btn-primary" style="padding:.45rem 1rem" href="https://github.com/bronzebasehq-lang/cleantake/releases/tag/v1.0.1" data-event="download_click" data-event-detail='{"location":"nav"}'>Get CleanTake</a>
   </div>
 </div></nav>
 
@@ -29,6 +29,17 @@
 <p>What shipped, what broke, what's next. Newest first.</p>
 
 <div class="card">
+  <h2 style="margin-top:0">v1.0.1 <span class="badge">latest</span></h2>
+  <p class="form-note" style="font-family:var(--mono)">2026-10-02</p>
+  <ul>
+    <li><strong>First public release.</strong> Two Windows 10/11 (64-bit) downloads on the <a href="https://github.com/bronzebasehq-lang/cleantake/releases/tag/v1.0.1">release page</a>: <strong>CleanTake-Setup-1.0.1.exe</strong> (one-click installer) and <strong>CleanTake-Portable-1.0.1.zip</strong> (unzip and run, no install).</li>
+    <li><strong>SmartScreen note:</strong> the build is unsigned open source — Windows shows "Windows protected your PC". Click <strong>More info → Run anyway</strong>. Full source is on GitHub if you'd rather build it yourself.</li>
+    <li><strong>Runs locally:</strong> the app opens at http://127.0.0.1:5057 — pick a preset, drop files in, get clean audio out. No account, nothing uploaded.</li>
+  </ul>
+  <p><strong>Install guide:</strong> <a href="/docs/install/">docs → install</a>.</p>
+</div>
+
+<div class="card">
   <h2 style="margin-top:0">v0.1.0 <span class="badge">private testing</span></h2>
   <p class="form-note" style="font-family:var(--mono)">2026-09-28</p>
   <ul>
@@ -36,7 +47,7 @@
     <li><strong>Real-voice test passed:</strong> steady environmental noise (fan/AC-type hum): noise floor −33dB → −59dB, voice preserved. <a href="/cleantake/">Hear the samples</a>.</li>
     <li><strong>Documented a hard limit:</strong> 4 overlapping voices in a café-style mix could not be separated — engine reduces voices and noise evenly. Kept as a public limit on the <a href="/docs/limits/">limits page</a>, not hidden.</li>
   </ul>
-  <p><strong>Known issues:</strong> no public installer yet; batch mode not built; Windows only for first release.</p>
+  <p><strong>Known issues:</strong> no public installer yet (shipped in v1.0.1); batch mode not built; Windows only for first release.</p>
 </div>
 
 <div class="card">
@@ -44,7 +55,6 @@
   <ul>
     <li>Batch mode — denoise a folder of files in one go.</li>
     <li>"Room noise" preset tuned from real user samples.</li>
-    <li>Windows installer (no admin rights needed).</li>
   </ul>
   <p class="form-note">We only announce a feature here after it actually works — never before.</p>
 </div>

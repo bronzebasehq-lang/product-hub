@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Install CleanTake | Bronze Base</title>
-<meta name="description" content="How to install CleanTake, the free local-first audio denoiser. Windows first; installer in progress — join the waitlist for the first public build.">
+<meta name="description" content="How to install CleanTake, the free local-first audio denoiser. Download v1.0.1 for Windows: one-click installer or portable ZIP. Free, no account.">
 <link rel="canonical" href="https://cleantake.bronzebasehq.workers.dev/docs/install/">
 <meta property="og:title" content="Install CleanTake">
-<meta property="og:description" content="Free local-first audio denoiser. Installer in progress — join the waitlist.">
+<meta property="og:description" content="Free local-first audio denoiser. Download v1.0.1 for Windows — installer or portable ZIP.">
 <meta property="og:type" content="website">
 <link rel="stylesheet" href="/assets/css/style.css">
 </head>
@@ -19,7 +19,7 @@
     <a href="/docs/use/">Docs</a>
     <a href="/blog/">Blog</a>
     <a href="/changelog/">Changelog</a>
-    <a class="btn btn-primary" style="padding:.45rem 1rem" href="/waitlist/" data-event="download_click" data-event-detail='{"location":"nav"}'>Get CleanTake</a>
+    <a class="btn btn-primary" style="padding:.45rem 1rem" href="https://github.com/bronzebasehq-lang/cleantake/releases/tag/v1.0.1" data-event="download_click" data-event-detail='{"location":"nav"}'>Get CleanTake</a>
   </div>
 </div></nav>
 
@@ -28,17 +28,20 @@
 <h1>Install CleanTake</h1>
 
 <div class="card honest">
-  <h3>Current status: no public installer yet</h3>
-  <p>CleanTake is in private testing — there is <strong>no downloadable installer today</strong>. This page documents what the install will look like so you know exactly what to expect. <a href="/waitlist/" data-event="download_click" data-event-detail='{"location":"docs-install"}'>Join the waitlist</a> and we'll email you once when the first build ships.</p>
+  <h3>v1.0.1 is out — download it now</h3>
+  <p>The first public build shipped 2026-10-02. Two options for Windows 10/11 (64-bit), both free:</p>
+  <div class="btn-row">
+    <a class="btn btn-primary" href="https://github.com/bronzebasehq-lang/cleantake/releases/tag/v1.0.1" data-event="download_click" data-event-detail='{"location":"docs-install"}'>Download v1.0.1</a>
+  </div>
 </div>
 
-<h2>Planned: Windows</h2>
-<ul>
-  <li><strong>OS:</strong> Windows 10/11, 64-bit (first release).</li>
-  <li><strong>What you get:</strong> a small desktop app — drag a file in, get a clean file out. No account, no sign-in.</li>
-  <li><strong>Size:</strong> TBD — published here before release, not guessed.</li>
-  <li><strong>Requirements:</strong> a regular CPU is enough; no GPU needed.</li>
-</ul>
+<h2>Install steps (Windows)</h2>
+<ol>
+  <li>On the <a href="https://github.com/bronzebasehq-lang/cleantake/releases/tag/v1.0.1">release page</a>, grab <strong>CleanTake-Setup-1.0.1.exe</strong> (one-click installer) or <strong>CleanTake-Portable-1.0.1.zip</strong> (no install — unzip and run).</li>
+  <li>If Windows shows "Windows protected your PC" (SmartScreen): click <strong>More info</strong> → <strong>Run anyway</strong>. This is expected — the build is unsigned open-source software, not a virus.</li>
+  <li>The app opens in your browser at <strong>http://127.0.0.1:5057</strong>. Pick a preset, drop your files in, hit "Clean them".</li>
+  <li>No account, no sign-in, no GPU needed — a regular CPU is enough.</li>
+</ol>
 
 <h2>What we will never do</h2>
 <ul class="tick">
@@ -48,9 +51,9 @@
 </ul>
 
 <h2>macOS / Linux</h2>
-<p>Not planned for the first release. The engine itself is cross-platform, so ports are possible — tell us on the waitlist which OS you need and it shapes the roadmap.</p>
+<p>Not available yet. The engine itself is cross-platform, so ports are possible — follow the <a href="https://github.com/bronzebasehq-lang/cleantake">GitHub repo</a> for future builds.</p>
 
-<p style="color:var(--muted);font-size:.9rem">Last updated: 2026-09-29. We update this page the day an installer actually exists — not before.</p>
+<p style="color:var(--muted);font-size:.9rem">Last updated: 2026-10-07.</p>
 </main>
 
 <footer><div class="wrap">
