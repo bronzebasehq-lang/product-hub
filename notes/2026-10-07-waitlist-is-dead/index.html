@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The waitlist is dead — v1.0.1 is out | Bronze Base</title>
+<meta name="description" content="CleanTake v1.0.1 shipped October 2, but the docs kept saying 'join the waitlist' for five more days. Fixed today: real download buttons and real install steps.">
+<link rel="canonical" href="https://cleantake.bronzebasehq.workers.dev/notes/2026-10-07-waitlist-is-dead/">
+<meta property="og:title" content="The waitlist is dead — v1.0.1 is out">
+<meta property="og:description" content="Five days late: the docs said 'join the waitlist' while v1.0.1 was already downloadable. Fixed today.">
+<meta property="og:type" content="article">
+<link rel="stylesheet" href="/assets/css/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "The waitlist is dead — v1.0.1 is out",
+  "description": "CleanTake v1.0.1 shipped October 2, but the docs kept saying 'join the waitlist' for five more days. Fixed today: real download buttons and real install steps.",
+  "author": {"@type": "Person", "name": "Bronze"},
+  "publisher": {"@type": "Organization", "name": "Bronze Base", "url": "https://cleantake.bronzebasehq.workers.dev/"},
+  "datePublished": "2026-10-07",
+  "dateModified": "2026-10-07",
+  "mainEntityOfPage": {"@type": "WebPage", "@id": "https://cleantake.bronzebasehq.workers.dev/notes/2026-10-07-waitlist-is-dead/"},
+  "inLanguage": "en"
+}
+</script>
+</head>
+<body>
+<nav class="nav"><div class="nav-inner">
+  <a class="brand" href="/">Bronze<span>Base</span></a>
+  <div class="nav-links">
+    <a href="/cleantake/">CleanTake</a>
+    <a href="/docs/install/">Install</a>
+    <a href="/docs/use/">Use</a>
+    <a href="/docs/limits/">Limits</a>
+    <a href="/blog/">Blog</a>
+    <a href="/changelog/">Changelog</a>
+    <a class="btn btn-primary" style="padding:.45rem 1rem" href="https://github.com/bronzebasehq-lang/cleantake/releases/tag/v1.0.1" data-event="download_click" data-event-detail='{"location":"nav","page":"notes/2026-10-07-waitlist-is-dead"}'>Get CleanTake</a>
+  </div>
+</div></nav>
+
+<main class="wrap prose">
+<p class="breadcrumb"><a href="/">home</a> / <a href="/notes/">notes</a> / waitlist-is-dead</p>
+
+<h1>The waitlist is dead — v1.0.1 is out</h1>
+<p class="form-note" style="font-family:var(--mono)">By Bronze · October 7, 2026 · 2 min read</p>
+
+<p>On October 2, CleanTake v1.0.1 shipped: a one-click Windows installer and a portable ZIP, free, on the <a href="https://github.com/bronzebasehq-lang/cleantake/releases/tag/v1.0.1">GitHub releases page</a>.</p>
+
+<p>If you visited this site any time between then and today, you wouldn't have known. The install docs still said "there is no downloadable installer today — join the waitlist." The waitlist form was still up. The nav button pointed at it.</p>
+
+<p>That's on me. I shipped the release and forgot the oldest rule: <strong>docs are code</strong>. They drift from reality the moment you stop treating them like code. For five days this site told visitors a download didn't exist while it sat one click away.</p>
+
+<p>Today that's fixed. Nine pages updated, every waitlist CTA replaced with a real download button, and <a href="/docs/install/">/docs/install/</a> rewritten with actual install steps — including the Windows SmartScreen "More info → Run anyway" step, because the build isn't code-signed yet and I'd rather tell you than let you wonder. The old <a href="/waitlist/">/waitlist/</a> URL now just says the waitlist is closed and points at the download, so no old link breaks.</p>
+
+<p>What's actually in v1.0.1: <code>CleanTake-Setup-1.0.1.exe</code> (one click) or <code>CleanTake-Portable-1.0.1.zip</code> (unzip and run, no install). The app runs locally at <code>127.0.0.1:5057</code> — drop a file, pick a preset, get clean audio back. Fan and AC hum gone (noise floor −33dB → −59dB on our test clip), voice untouched. Same honest limits as always: it will not separate voices in a crowded café.</p>
+
+<div class="btn-row">
+  <a class="btn btn-primary" href="https://github.com/bronzebasehq-lang/cleantake/releases/tag/v1.0.1" data-event="download_click" data-event-detail='{"location":"note-body","page":"notes/2026-10-07-waitlist-is-dead"}'>Download v1.0.1 — free</a>
+</div>
+
+<p>If you joined the waitlist: there's nothing to wait for anymore. The download button is the whole list now.</p>
+
+</main>
+
+<footer><div class="wrap">
+  <a href="/privacy/">Privacy</a><a href="/docs/limits/">Limits</a><a href="/changelog/">Changelog</a>
+  <a href="https://x.com/bronzebase" data-event="outbound_github_click" data-event-detail='{"dest":"x"}'>X @bronzebase</a>
+  <span class="spacer">Bronze Base · one file in, one file out</span>
+</div></footer>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>
+
+<!--
+LOG — note 2026-10-07
+- URL: /notes/2026-10-07-waitlist-is-dead/
+- Written: 2026-10-07 (first daily note of the 2-week blog test rhythm)
+- Trigger: waitlist→download sweep (9 pages) completed same day; /docs/install/ rewritten with real steps from repo README
+- Numbers used: v1.0.1 (2026-10-02), 5 days stale docs, noise floor −33dB → −59dB
+- CTA: download v1.0.1 (nav + body button)
+-->
