@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Free local audio denoiser: clean voice recordings without uploading | Bronze Base</title>
-<meta name="description" content="CleanTake removes steady room noise from voice recordings on your own computer — no upload, no account. Listen to a real before/after test (25 s, ≈32 dB noise cut) and read the exact method.">
+<meta name="description" content="CleanTake removes steady room noise from voice recordings on your own computer — no upload, no account. Listen to a real before/after test (25 s, noise floor −33dB → −59dB) and read the exact method.">
 <link rel="canonical" href="https://cleantake.bronzebasehq.workers.dev/blog/free-local-audio-denoiser/">
 <meta property="og:title" content="Free local audio denoiser: clean voice recordings without uploading">
 <meta property="og:description" content="Real before/after demo. Runs 100% local — no upload, no cloud, no subscription.">
@@ -15,7 +15,7 @@
   "@context": "https://schema.org",
   "@type": "BlogPosting",
   "headline": "Free local audio denoiser: clean voice recordings without uploading",
-  "description": "CleanTake removes steady room noise from voice recordings on your own computer — no upload, no account. Listen to a real before/after test (25 s, ≈32 dB noise cut) and read the exact method.",
+  "description": "CleanTake removes steady room noise from voice recordings on your own computer — no upload, no account. Listen to a real before/after test (25 s, noise floor −33dB → −59dB) and read the exact method.",
   "author": {"@type": "Person", "name": "Bronze"},
   "publisher": {"@type": "Organization", "name": "Bronze Base", "url": "https://cleantake.bronzebasehq.workers.dev/"},
   "datePublished": "2026-10-01",
@@ -146,7 +146,7 @@ LOG — article 01
 - Written: 2026-09-30 · datePublished/dateModified: 2026-10-01 (per 90-day plan, Day 3)
 - Primary query: "free local audio denoiser" (secondary: "offline audio noise reduction app")
 - SERP check 2026-09-30: gap = no page with listenable A/B + public numbers + honest limits; OSS needs build-from-source, cloud tools gate downloads
-- Numbers used: DeepFilterNet 0.5.6, ffmpeg 8.1.2, 25.0 s files (before 400 KB / after 601 KB), loudnorm I=-16:TP=-1.5:LRA=11, ≈32 dB (2026-09-28 test), re-check 2026-09-30 (18–26 dB pause floor, volumedetect), pipeline ≈5 s on CPU no GPU
+- Numbers used: DeepFilterNet 0.5.6, ffmpeg 8.1.2, 25.0 s files (before 400 KB / after 601 KB), loudnorm I=-16:TP=-1.5:LRA=11, noise floor −33dB → −59dB (2026-09-28 test), re-check 2026-09-30 (18–26 dB pause floor, volumedetect), pipeline ≈5 s on CPU no GPU
 - CTA: waitlist only (single). No download button anywhere.
 - Events wired: sample_play (both audio elements), download_click (nav + 2 CTA buttons), outbound_github_click (DeepFilterNet repo + X links); waitlist_submit fires on /waitlist/ form
 - Competitor claims checked 2026-09-30, described as found
