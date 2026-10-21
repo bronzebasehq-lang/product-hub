@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- TODO: replace https://cleantake.bronzebasehq.workers.dev with the real domain on deploy (see README.md) -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://cleantake.bronzebasehq.workers.dev/</loc><lastmod>2026-09-29</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://cleantake.bronzebasehq.workers.dev/</loc><lastmod>2026-10-21</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
   <url><loc>https://cleantake.bronzebasehq.workers.dev/cleantake/</loc><lastmod>2026-09-29</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
   <url><loc>https://cleantake.bronzebasehq.workers.dev/waitlist/</loc><lastmod>2026-09-29</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://cleantake.bronzebasehq.workers.dev/docs/install/</loc><lastmod>2026-09-29</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
