@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The $50 Hack: a hacker rented a tireless AI agent for $50 a company — and a sandbox checklist for agent builders | Bronze Base</title>
+<meta name="description" content="A hacker breached 100+ companies at about $50 each, using Claude Code, a cheap DeepSeek model and the open-source Cairn harness. What happened — as reported by NorForge (via aiweekly.co) and TechCrunch — plus a 5-point sandbox checklist for anyone shipping AI agents.">
+<link rel="canonical" href="https://cleantake.bronzebasehq.workers.dev/blog/the-50-dollar-hack-sandbox-checklist/">
+<meta property="og:title" content="The $50 Hack: a hacker rented a tireless AI agent for $50 a company">
+<meta property="og:description" content="100+ companies breached, ~$50 per breach, one cheap model and an open-source harness. Plus the 5-point sandbox checklist for people who build agents.">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://cleantake.bronzebasehq.workers.dev/assets/img/cleantake-logo-512.png">
+<link rel="stylesheet" href="/assets/css/style.css">
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "5a31a7cc01d04b9daa232c9f4b43b3c2"}'></script><!-- End Cloudflare Web Analytics -->
+<link rel="icon" type="image/png" href="/assets/img/cleantake-logo-64.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "The $50 Hack: When a Hacker Rented a Tireless Employee for $50 — and a Sandbox Checklist for People Who Build Agents",
+  "description": "A hacker breached 100+ companies at about $50 each, using Claude Code, a cheap DeepSeek model and the open-source Cairn harness. What happened, plus a 5-point sandbox checklist for anyone shipping AI agents.",
+  "author": {
+    "@type": "Person",
+    "name": "Bronze"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Bronze Base",
+    "url": "https://cleantake.bronzebasehq.workers.dev/"
+  },
+  "datePublished": "2026-10-21",
+  "dateModified": "2026-10-21",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://cleantake.bronzebasehq.workers.dev/blog/the-50-dollar-hack-sandbox-checklist/"
+  },
+  "inLanguage": "en"
+}
+</script>
+</head>
+<body>
+<nav class="nav"><div class="nav-inner">
+  <a class="brand" href="/">Bronze<span>Base</span></a>
+  <div class="nav-links">
+    <a href="/cleantake/">CleanTake</a>
+    <a href="/docs/use/">Docs</a>
+    <a href="/blog/">Blog</a>
+    <a href="/changelog/">Changelog</a>
+    <a class="btn btn-primary" style="padding:.45rem 1rem" href="https://github.com/bronzebasehq-lang/cleantake/releases/tag/v1.0.1" data-event="download_click" data-event-detail='{"location":"nav"}'>Get CleanTake</a>
+  </div>
+</div></nav>
+
+<main class="wrap prose">
+
+<p class="breadcrumb"><a href="/">home</a> / <a href="/blog/">blog</a> / the-50-dollar-hack-sandbox-checklist</p>
+
+<h1>The $50 Hack: When a Hacker Rented a Tireless Employee for $50 — and a Sandbox Checklist for People Who Build Agents</h1>
+
+<p class="form-note" style="font-family:var(--mono)">By Bronze · October 21, 2026 · 5 min read</p>
+
+<p>A hacker breached more than 100 companies — including John Deere, SharkNinja, and Cummins — and each breach cost him about fifty dollars. Not fifty thousand. Fifty. That's the headline. The interesting part is the economics behind it, and what it means for anyone building with AI agents today.</p>
+
+<p>The campaign ran from late September 2026. Security firm NorForge, which tracked it from the outside, counted 1,200+ websites probed across the US, Canada, Australia, and Japan, with more than 100 organizations actually breached. Each attack run lasted roughly 23 hours. The total token bill across the whole campaign: about $5,000 — hence the $50-per-hack figure.</p>
+
+<p>The part that should unsettle builders: the weapon was boring. The initial instruction was under 100 Chinese characters — shorter than most people's "build me a website" prompt. The stack was Claude Code calling a cheap DeepSeek V4.1 Flash model, orchestrated through Cairn, an open-source agent platform. The same kind of stack thousands of indie builders use for to-do apps and side projects. No secret super-AI. No zero-days worth millions. Just a cheap model, an open-source harness, and 23 uninterrupted hours of not sleeping, not eating, never asking for a raise.</p>
+
+<p>The defender side noticed. Microsoft launched Guardian Agents (under "Project Perception"): AI watchers that sit on top of your agents. Microsoft's Defender now claims to detect up to 60 types of AI agents, each one issued its own Entra Agent ID — an identity badge, basically, for something that isn't a person. Microsoft's own security chief, Hayete Gallot, put it bluntly: "frontier models, regardless of their origin, cannot be trusted." Satya Nadella's framing was even cleaner: the industry must "separate the supply of intelligence from the authority over it." Translation for beginners: the brain and the hands should not belong to the same unsupervised entity.</p>
+
+<p>Meanwhile the market is already pricing the countermeasure. Daytona — a company that sells exactly the thing that would have stopped this attack, fast disposable sandboxes — raised $60 million. A sandbox that spins up in 60 milliseconds is the product form of one simple idea: never let an agent touch anything real without a cage around it.</p>
+
+<h2>The sandbox checklist — for anyone shipping agents in 2026</h2>
+
+<ol>
+  <li><strong>Sandbox every agent, no exceptions.</strong> If your agent can execute code, touch files, or call APIs, it runs inside an isolated environment. The $50 hacker's agent ran free on open infrastructure — that must never be your agent.</li>
+  <li><strong>One key, one tool, least privilege.</strong> Give each agent its own API credentials with the smallest permissions it needs. A key that can read a database should never be the same key that can delete from it.</li>
+  <li><strong>Spending limits and billing alerts.</strong> The attacker spent $5,000 total and that was the whole campaign budget. Set hard caps on your token and API spend so a runaway agent fails loudly and early, not expensively and quietly.</li>
+  <li><strong>Never let an agent touch production without a human gate.</strong> The agent proposes; a human approves destructive actions. Nadella's line — separate intelligence from authority — is a design rule, not a slogan.</li>
+  <li><strong>Audit logs you actually read.</strong> Transcript and recording of everything the agent did, stored where the agent can't rewrite them. (Ironically, this is the same feature call4me ships for phone calls — and it's the feature every agent builder forgets first.)</li>
+</ol>
+
+<p>The asymmetry that made this attack possible is simple: offense automated before defense did. One person plus a cheap model plus an open-source harness equals a 23-hour shift worker that costs $50. The only sane response is to automate defense with the same seriousness — starting with the sandbox around your own agents, today, before someone else's $50 agent comes knocking.</p>
+
+<p class="form-note">Based on reporting by aiweekly.co (NorForge / Snorre Fagerland) and TechCrunch's coverage of Microsoft Guardian Agents (October 19, 2026). All figures are as reported by those sources. This post is the long-form companion to our Short "The $50 Hack" on the Bronze Base YouTube channel.</p>
+
+<p><a href="/blog/">← All blog posts</a></p>
+
+</main>
+
+<footer><div class="wrap">
+  <a href="/privacy/">Privacy</a><a href="/docs/limits/">Limits</a><a href="/changelog/">Changelog</a>
+  <a href="https://x.com/bronzebase" data-event="outbound_github_click" data-event-detail='{"dest":"x"}'>X @bronzebase</a>
+  <span class="spacer">Bronze Base · one file in, one file out</span>
+</div></footer>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>
