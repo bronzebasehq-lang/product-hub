@@ -1,7 +1,5 @@
 # Product Hub — CleanTake (static site)
 
-**Live site:** https://cleantake.bronzebasehq.workers.dev/ · **Blog:** https://cleantake.bronzebasehq.workers.dev/blog/
-
 Static HTML/CSS/JS, **no build step**. Deploy to any static host free tier:
 GitHub Pages, Cloudflare Pages, or Netlify. Upload the folder contents as-is.
 

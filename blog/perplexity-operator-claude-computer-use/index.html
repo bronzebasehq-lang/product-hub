@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Perplexity Computer vs OpenAI Operator vs Claude Computer Use: three philosophies, one dead | Bronze Base</title>
+<meta name="description" content="Three different philosophies for AI agents that use your computer: Perplexity sells the result ($200/mo cloud agent), Anthropic sells the capability (API, you build it), OpenAI's Operator is a cautionary tale (dead after 19 months). What builders should learn.">
+<link rel="canonical" href="https://cleantake.bronzebasehq.workers.dev/blog/perplexity-operator-claude-computer-use/">
+<meta property="og:title" content="Perplexity Computer vs OpenAI Operator vs Claude Computer Use: three philosophies, one dead">
+<meta property="og:description" content="One sells the result, one sells the capability, one is already dead. A builder's comparison with verified facts and a real exit-plan checklist.">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://cleantake.bronzebasehq.workers.dev/assets/img/cleantake-logo-512.png">
+<link rel="stylesheet" href="/assets/css/style.css">
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "5a31a7cc01d04b9daa232c9f4b43b3c2"}'></script><!-- End Cloudflare Web Analytics -->
+<link rel="icon" type="image/png" href="/assets/img/cleantake-logo-64.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Perplexity Computer vs OpenAI Operator vs Claude Computer Use: three philosophies, one dead",
+  "description": "Three different philosophies for AI agents that use your computer: Perplexity sells the result, Anthropic sells the capability, OpenAI's Operator is a cautionary tale.",
+  "author": {
+    "@type": "Person",
+    "name": "Bronze"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Bronze Base",
+    "url": "https://cleantake.bronzebasehq.workers.dev/"
+  },
+  "datePublished": "2026-10-24",
+  "dateModified": "2026-10-24",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://cleantake.bronzebasehq.workers.dev/blog/perplexity-operator-claude-computer-use/"
+  },
+  "inLanguage": "en"
+}
+</script>
+</head>
+<body>
+<nav class="nav"><div class="nav-inner">
+  <a class="brand" href="/">Bronze<span>Base</span></a>
+  <div class="nav-links">
+    <a href="/cleantake/">CleanTake</a>
+    <a href="/docs/use/">Docs</a>
+    <a href="/blog/">Blog</a>
+    <a href="/changelog/">Changelog</a>
+    <a class="btn btn-primary" style="padding:.45rem 1rem" href="https://github.com/bronzebasehq-lang/cleantake/releases/tag/v1.0.1" data-event="download_click" data-event-detail='{"location":"nav"}'>Get CleanTake</a>
+  </div>
+</div></nav>
+
+<main class="wrap prose">
+
+<p class="breadcrumb"><a href="/">home</a> / <a href="/blog/">blog</a> / perplexity-operator-claude-computer-use</p>
+
+<h1>Perplexity Computer vs OpenAI Operator vs Claude Computer Use: three philosophies, one dead</h1>
+
+<p class="form-note" style="font-family:var(--mono)">By Bronze · October 24, 2026 · 6 min read</p>
+
+<p>Everyone wants an AI that uses your computer for you. But the three biggest attempts at it are not really competitors — they are three different philosophies. One sells you the result. One sells you the capability. And one is already dead, which makes it the most instructive of the three.</p>
+
+<h2>1. Perplexity Computer — selling the result</h2>
+
+<p>Perplexity Computer is a "digital worker": give it a goal, it orchestrates roughly 20 frontier models (reasoning core is Claude Opus 4.6; sub-agents use Gemini for deep research, Nano Banana for images, Veo 3.1 for video, Grok for light tasks, ChatGPT 5.2 for long context — all per Perplexity's own announcement), splits the task into subtasks, and runs the workflow asynchronously for hours, days, even months. It runs inside Perplexity's isolated cloud environment with a real filesystem, a real browser, and 400+ integrations (Slack, Gmail, GitHub).</p>
+
+<p>It launched in late February 2026 and is still alive. There are variants: Personal Computer (runs locally on Mac/Mac mini, rolling out since May 2026, fully-local from October 2026), Portable Computer (local on Nvidia hardware, August 2026), and Enterprise editions.</p>
+
+<p>The catch is the price and the billing model. Perplexity Computer ships with the <strong>Perplexity Max plan at $200/month</strong> (per Perplexity's pricing page, corroborated by press coverage in October 2026). The $20/month Pro plan only gets a one-time 4,000-credit trial. And because agents retry when connectors fail, credits can burn fast — with no reliable cost estimate shown before you run, according to hands-on reviews.</p>
+
+<p>Philosophy: <strong>don't build anything, rent the outcome.</strong> No setup, no code, no servers. But you rent the whole agent, its environment, and its roadmap — which means you can be priced out, throttled, or re-planned at the vendor's discretion.</p>
+
+<h2>2. OpenAI Operator — the cautionary tale</h2>
+
+<p>OpenAI Operator was the browser-automation agent for consumers: it looked at screenshots, reasoned, and emitted clicks and keystrokes, running on OpenAI's cloud browser (the CUA model — GPT-4o plus reinforcement learning). It filled in forms, placed orders, booked appointments, like a real user.</p>
+
+<p>It launched January 23, 2025 as a research preview for ChatGPT Pro users in the US. Then the timeline went like this: folded into the ChatGPT agent on July 17, 2025; the standalone app <strong>shut down at the end of August 2025</strong>; the successor ChatGPT agent itself was <strong>removed from ChatGPT in early August 2026</strong> (OpenAI's Help Center now says "ChatGPT agent is no longer available", pointing to ChatGPT Work); the Atlas browser also sunset on August 9, 2026. The capability survives only in fragments: a cloud browser here, a Chrome extension there, an app somewhere else.</p>
+
+<p>When alive, Operator required the <strong>ChatGPT Pro plan at $200/month</strong> — the only tier that had it during research preview.</p>
+
+<p>Lifecycle: <strong>~19 months from launch to the successor being removed.</strong> That's the lesson, and it's the whole point of this section: anyone who built automation workflows on top of Operator woke up to a platform that no longer exists. Not deprecated — gone.</p>
+
+<h2>3. Claude's Computer Use — selling the capability</h2>
+
+<p>Anthropic went the opposite direction. Computer Use is not an app — it's a <code>computer</code> tool on the Claude API. <strong>You</strong> build the agent. <strong>You</strong> provide the environment (Anthropic recommends a dedicated VM or container). The loop is simple: screenshot → the model looks at the image, computes pixel coordinates (x, y) → returns tool calls (mouse/keyboard) → your app executes them → screenshot again to verify → repeat.</p>
+
+<p>It was announced October 22, 2024 alongside Claude 3.5 Sonnet as an "experimental" beta that Anthropic itself called cumbersome and error-prone, and reached general availability in August 2026 with toolset <code>computer_toolset_20260801</code> (no beta header needed, batch actions, default zoom). The recommended model is Claude Sonnet 4.5 (released September 29, 2025), which Anthropic calls its best computer-using model, scoring 61.4% on OSWorld. Official API pricing: <strong>$3 input / $15 output per 1M tokens</strong>.</p>
+
+<p>Philosophy: <strong>no product, just capability.</strong> You get the raw power and the raw bill. You also get the raw responsibility: the harness, the VM, the guardrails, the prompt-injection defenses (Anthropic's own docs require isolated environments, least-privilege, domain allowlists, and human confirmation before actions with real consequences — because a screenshot is an attack surface).</p>
+
+<h2>The comparison</h2>
+
+<table>
+<tr><th></th><th>Perplexity Computer</th><th>OpenAI Operator</th><th>Claude Computer Use</th></tr>
+<tr><td><strong>Architecture</strong></td><td>Vendor-managed cloud VM, complete agent</td><td>(Dead) OpenAI-managed cloud browser</td><td>API tool; dev builds the agent and provides the VM</td></tr>
+<tr><td><strong>Audience</strong></td><td>End users / teams (use it, don't code)</td><td>ChatGPT consumers</td><td>Developers building their own agents</td></tr>
+<tr><td><strong>Price</strong></td><td>$200/month (Max plan)</td><td>(Dead) required $200/month Pro</td><td>Pay-per-token: $3/$15 per 1M tokens</td></tr>
+<tr><td><strong>Strength</strong></td><td>Multi-model, long unsupervised workflows, 400+ integrations</td><td>— (history only)</td><td>Most flexible, full dev control, strong OSWorld score</td></tr>
+<tr><td><strong>Weakness</strong></td><td>Expensive, unpredictable cost, roadmap lock-in</td><td>The vendor killed it — platform risk in pure form</td><td>You build everything (harness, VM, guardrails); screenshot tokens cost</td></tr>
+</table>
+
+<h2>What builders should actually take from this</h2>
+
+<p>The three products are a spectrum, and your position on it is a business decision, not a technical one:</p>
+
+<ol>
+  <li><strong>Rent the outcome</strong> (Perplexity): fastest to value, but your unit economics and your roadmap belong to someone else. Fine for prototyping and non-core workflows. Dangerous as load-bearing infrastructure.</li>
+  <li><strong>Buy the capability</strong> (Anthropic): you own the agent, the environment, and the exit. The cost is real engineering work — sandboxing, guardrails, harness. The bill is proportional to usage, not to a tier.</li>
+  <li><strong>Remember the dead one</strong> (OpenAI): 19 months, end to end. Any automation you build on a vendor agent needs an <strong>abstraction layer and an exit plan</strong> — a documented way to move the same workflow to another provider or your own infra. If you can't describe your exit in two sentences, you don't have one.</li>
+</ol>
+
+<p>There's a fourth option the comparison table hides: run it on your own machine. Local-first agents (open models + your own harness) trade capability for ownership — the same trade this blog has been tracking since the $50 hack. The vendors will keep racing on capability. Ownership is the one axis where you don't have to wait for them.</p>
+
+<p class="form-note">Facts verified against live sources on October 24, 2026 (Perplexity's official blog and pricing docs, Anthropic's docs and model announcements, OpenAI's Help Center via secondary sources). Vendor-reported figures are attributed as such. What we could not verify — Perplexity Computer's real-world user counts and GA error rates of Computer Use — is stated openly instead of guessed.</p>
+
+<p><a href="/blog/">← All blog posts</a></p>
+
+</main>
+
+<footer><div class="wrap">
+  <a href="/privacy/">Privacy</a><a href="/docs/limits/">Limits</a><a href="/changelog/">Changelog</a>
+  <a href="https://x.com/bronzebase" data-event="outbound_github_click" data-event-detail='{"dest":"x"}'>X @bronzebase</a>
+  <span class="spacer">Bronze Base · one file in, one file out</span>
+</div></footer>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>
