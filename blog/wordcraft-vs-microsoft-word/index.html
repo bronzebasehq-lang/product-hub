@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WordCraft vs Microsoft Word: A Free Rust Clone — How It Works, and What to Actually Use It For | Bronze Base</title>
+<meta name="description" content="WordCraft rebuilds Word in pure Rust, free and offline, with one command set driving the ribbon, the CLI, and AI agents. Its own roadmap says ~60% ready for real work — so here is the mechanism, the honest parity table, and the three jobs it is already good for.">
+<link rel="canonical" href="https://cleantake.bronzebasehq.workers.dev/blog/wordcraft-vs-microsoft-word/">
+<meta property="og:title" content="WordCraft vs Microsoft Word: A Free Rust Clone — How It Works, and What to Actually Use It For">
+<meta property="og:description" content="A free, offline Rust clone of Word with one command set for humans and agents — and its own roadmap says ~60% ready for real work. The mechanism, the parity table, and the three jobs it is already good for.">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://cleantake.bronzebasehq.workers.dev/assets/img/cleantake-logo-512.png">
+<link rel="stylesheet" href="/assets/css/style.css">
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "5a31a7cc01d04b9daa232c9f4b43b3c2"}'></script><!-- End Cloudflare Web Analytics -->
+<link rel="icon" type="image/png" href="/assets/img/cleantake-logo-64.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "WordCraft vs Microsoft Word: A Free Rust Clone — How It Works, and What to Actually Use It For",
+  "description": "WordCraft rebuilds Word in pure Rust, free and offline, with one command set driving the ribbon, the CLI, and AI agents. Its own roadmap says ~60% ready for real work.",
+  "author": {
+    "@type": "Person",
+    "name": "Bronze"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Bronze Base",
+    "url": "https://cleantake.bronzebasehq.workers.dev/"
+  },
+  "datePublished": "2026-10-31",
+  "dateModified": "2026-10-31",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://cleantake.bronzebasehq.workers.dev/blog/wordcraft-vs-microsoft-word/"
+  },
+  "inLanguage": "en"
+}
+</script>
+</head>
+<body>
+<nav class="nav"><div class="nav-inner">
+  <a class="brand" href="/">Bronze<span>Base</span></a>
+  <div class="nav-links">
+    <a href="/cleantake/">CleanTake</a>
+    <a href="/docs/use/">Docs</a>
+    <a href="/blog/">Blog</a>
+    <a href="/changelog/">Changelog</a>
+    <a class="btn btn-primary" style="padding:.45rem 1rem" href="https://github.com/bronzebasehq-lang/cleantake/releases/tag/v1.0.1" data-event="download_click" data-event-detail='{"location":"nav"}'>Get CleanTake</a>
+  </div>
+</div></nav>
+
+<main class="wrap prose">
+
+<p class="breadcrumb"><a href="/">home</a> / <a href="/blog/">blog</a> / wordcraft-vs-microsoft-word</p>
+
+<h1>WordCraft vs Microsoft Word: A Free Rust Clone — How It Works, and What to Actually Use It For</h1>
+
+<p class="form-note" style="font-family:var(--mono)">By Bronze · October 31, 2026 · 7 min read</p>
+
+<p>A small team built a word processor that looks and behaves like Word, in pure Rust, in a matter of weeks, with AI doing much of the writing. It reads and writes .docx, runs offline on desktop and in the browser, costs nothing, and — the part that matters most — lets an AI agent drive it through the same commands a human clicks.</p>
+
+<p>That is WordCraft, from the ArtCraft team, and it is the most interesting free alternative to Word in years precisely because it is not finished. Its own roadmap calls it alpha and grades it at about 60% ready for real work. So this is not a "Word is dead" post. It is a comparison of what each tool actually is, how the clone works under the hood, where its own authors say it falls short, and the three jobs it is already good for today.</p>
+
+<h2>What each tool actually is</h2>
+
+<p><strong>Microsoft Word</strong> is the reference implementation: decades of formatting edge cases, a subscription product inside an ecosystem of cloud storage, collaboration, and enterprise deployment. You pay for completeness and for the guarantee that the file your colleague sends you will open exactly as they wrote it.</p>
+
+<p><strong>WordCraft</strong> is a clean-room reimplementation: built, in its own words, "from public specifications and observation, with every asset original or openly licensed." Clean-room here has a specific meaning — the authors did not copy Microsoft's code. They re-created the behavior from the published .docx format, from watching how Word behaves, and from writing their own code. The project is MIT OR Apache-2.0 licensed, created on October 7, 2026, and had 16,750 stars on GitHub when checked on the morning of October 31, 2026.</p>
+
+<p>The ArtCraft team did the same trick across a whole suite — PhotoCraft for Photoshop, GridCraft for spreadsheets, Deckcraft for slides — and Korean press coverage on October 30, 2026 (ChosunBiz) is what turned a GitHub curiosity into a story about the moat around big software. That coverage also carries the caveat this post keeps: a user interface that mimics Word this closely invites a copyright dispute even with a clean-room claim, and the professional feature set has not been independently proven. Treat the clone's legal safety as unresolved, not settled.</p>
+
+<h2>The mechanism: one command set for humans and agents</h2>
+
+<p>Most "AI-friendly" tools bolt an assistant on the side. WordCraft's design inverts that: <strong>every action is a command with an id, and the same command set drives the ribbon, the keyboard shortcuts, the command search, a command-line tool, a JSON control channel, and an MCP server.</strong> The README describes this set as 422 commands. (A small transparency note: the roadmap's measured count lists 433 commands — the two pages drift slightly, but the mechanism is the same on both.)</p>
+
+<p>That single decision explains three things at once:</p>
+
+<p><strong>1. Why it is fast and portable.</strong> One Rust codebase, native egui on the GPU, no Electron, no Tauri. It ships on macOS, Windows, Linux, BSD, and the web via WebAssembly, with v0.4.0 released October 10, 2026 as signed builds. The README reports that typing in a 188-page document re-lays it out in about 1.4 ms because paragraph layout is cached — a vendor claim, but the architecture (cached layout, on-demand page rendering) is at least the right shape for it.</p>
+
+<p><strong>2. Why agents can use it without screenshots.</strong> An agent does not need to click buttons and read pixels. It connects over MCP (<code>claude mcp add wordcraft</code>), lists commands, executes them, and checks its own work with <code>inspect_document</code> — reading the document structure back instead of guessing from a screenshot. Macros record any sequence of commands and play it back. For document work, this is a much more reliable agent interface than screen-scraping a GUI.</p>
+
+<p><strong>3. Why offline is real here, not marketing.</strong> Spelling, grammar, and everything else work offline, according to the README. There is no account and no subscription because there is no server to pay for. The one exception to watch is the agent path itself: if you connect an agent that calls a cloud model, your document content travels to that model provider. Offline describes the word processor, not every agent you plug into it. WordCraft at least gives you the confinement flags to control this: <code>wordcraft-cli mcp --automation-read-root DIR --automation-write-root DIR</code> fences the agent to folders you name.</p>
+
+<h2>The honest parity table (their own numbers, not ours)</h2>
+
+<p>WordCraft's roadmap is unusually candid, and it grades itself against Word for Mac 16.113.4 (Microsoft 365). All figures below are the project's own assessment, last reviewed October 10, 2026 and updated October 29, 2026 — not an independent measurement:</p>
+
+<table>
+<tr><th></th><th>WordCraft (self-assessed)</th></tr>
+<tr><td><strong>Ribbon/menu catalog coverage</strong></td><td>493 / 508 (97.0%) — measured by their parity tool</td></tr>
+<tr><td><strong>Feature breadth</strong></td><td>~80% — estimated</td></tr>
+<tr><td><strong>Ready for real work</strong></td><td>~60% (range 55–63%) — estimated</td></tr>
+<tr><td><strong>Mainstream practitioner</strong></td><td>~55% — estimated</td></tr>
+<tr><td><strong>Essentials user</strong></td><td>~63% — estimated</td></tr>
+<tr><td><strong>Distance to beta</strong></td><td>~15 points (60% → 75%) and ~150–230 hours of agent wall-clock</td></tr>
+<tr><td><strong>Distance to full parity</strong></td><td>~750–1,250 hours of agent wall-clock</td></tr>
+</table>
+
+<p>By area, the shape is clear: typing, selection, and clipboard at 85%; character and paragraph formatting at 82%; tables at 76%; review (comments, track changes, compare) at 72% — against charts, SmartArt, Draw/ink, and 3D models at <strong>3%</strong>. Stability sits at 50%, ecosystem and plugins at 15%. The interface ships in many languages including a complete Vietnamese catalog — but Vietnamese proofing (spelling and grammar) is not included yet.</p>
+
+<p>And the "why not beta" list, in the roadmap's own words: DOCX has never been tested on real-world files; charts, SmartArt, and OLE objects are dropped silently; pagination differs from Word; content controls are lost; there is open evidence of a startup crash and several hangs. The roadmap's user evidence is equally blunt: 120 issues from outside users, 4 praise, and <strong>0 "switched from Word."</strong> Nobody, by their own count, has yet replaced Word with this.</p>
+
+<h2>The comparison</h2>
+
+<table>
+<tr><th></th><th>Microsoft Word</th><th>WordCraft</th></tr>
+<tr><td><strong>Price</strong></td><td>Paid subscription product</td><td>$0, MIT OR Apache-2.0</td></tr>
+<tr><td><strong>Where your files go</strong></td><td>Cloud ecosystem by default</td><td>Your machine; offline by design</td></tr>
+<tr><td><strong>.docx fidelity</strong></td><td>The reference — files open as written</td><td>Reads/writes .docx; real-world round-trips untested; charts/SmartArt dropped silently</td></tr>
+<tr><td><strong>Agent control</strong></td><td>No native agent command interface</td><td>Same command set for ribbon, CLI, and MCP; inspectable document state</td></tr>
+<tr><td><strong>Maturity</strong></td><td>Decades of edge cases handled</td><td>Alpha; ~60% ready for real work by its own grade</td></tr>
+<tr><td><strong>Platforms</strong></td><td>Windows, Mac, web, mobile</td><td>macOS, Windows, Linux, BSD, web — no mobile story</td></tr>
+<tr><td><strong>Legal risk</strong></td><td>None for the user</td><td>Clean-room claim vs. mimicry dispute risk — unresolved</td></tr>
+</table>
+
+<h2>Three jobs it is already good for</h2>
+
+<p><strong>1. Draft and edit .docx offline, on any desktop.</strong> For straightforward documents — text, styles, lists, tables, track changes, mail merge from CSV, citations in APA, MLA, Chicago, or IEEE — the core workflows pass the project's own alpha gate end to end with save and reopen. Start from a copy, not the original, and keep Word around for the final check.</p>
+
+<p><strong>2. Batch-convert and inspect documents from the command line.</strong> <code>wordcraft-cli convert report.docx report.pdf</code> converts between docx, pdf, odt, rtf, html, md, tex, and txt; <code>wordcraft-cli inspect report.docx</code> dumps the structure as JSON; <code>wordcraft-cli run --script job.json</code> replays a command script and saves the result. That is a genuinely useful pipeline piece even if you never open the GUI.</p>
+
+<p><strong>3. Let an agent draft documents under confinement.</strong> Connect the MCP server, fence it to one input and one output folder with the <code>--automation-read-root</code> / <code>--automation-write-root</code> flags, and have it build a report from a template — then verify with <code>inspect_document</code> before opening the result. The agent writes a real .docx you own, with no subscription and no upload to a word-processor vendor. Do not yet give it files containing charts, SmartArt, or complex real-world formatting and expect them back intact.</p>
+
+<h2>What not to trust it with yet</h2>
+
+<p>Do not migrate a team onto it. Do not round-trip a client's .docx full of charts and expect the charts to survive. Do not assume pagination matches Word page-for-page — the roadmap says it does not. And do not read the star count as proof: 16,750 stars in three weeks measures excitement, and the project's own evidence says zero users have switched from Word so far. Excitement is a reason to try it; it is not a reason to depend on it.</p>
+
+<h2>The rule to keep</h2>
+
+<p>The interesting thing about WordCraft is not that a clone exists. Clones have existed for decades. It is that the clone was built command-first, so the same interface serves a human clicking a ribbon and an agent executing a script — and that it publishes a parity table honest enough to say 3% on charts and zero switchers. If you want a free Word today, the honest answer is: use WordCraft for drafting, batch work, and agent-driven documents, and keep Word for the files that must survive contact with everyone else unchanged. Revisit the split when the roadmap's beta list — real-world .docx testing, chart preservation, stability — is actually closed.</p>
+
+<p><em>More honest comparisons and builder checklists live on this blog — local-first tools, agents, and the receipts to back the claims.</em></p>
+
+<p class="form-note">WordCraft details verified against its GitHub repo on October 31, 2026: README (16,750 stars, 4,593 forks, 2,424 commits, created October 7, 2026; MIT OR Apache-2.0; 422 commands per README vs. 433 in the roadmap's measured count; clean-room description; offline spelling/grammar; native egui; v0.4.0 releases) and ROADMAP.md (stage alpha; headline numbers last reviewed October 10, 2026, updated October 29, 2026; target Word for Mac 16.113.4; beta distance ~150–230 hours of agent wall-clock; user evidence 120 outside issues, 4 praise, 0 "switched from Word"). All readiness percentages are the project's own estimates, not independent measurements. The ArtCraft suite story and copyright-dispute risk are as reported by ChosunBiz on October 30, 2026, not verified against court filings. Microsoft Word pricing is described qualitatively only; check Microsoft's current plan page before relying on it.</p>
+
+<p><a href="/blog/">← All blog posts</a></p>
+
+</main>
+
+<footer><div class="wrap">
+  <a href="/privacy/">Privacy</a><a href="/docs/limits/">Limits</a><a href="/changelog/">Changelog</a>
+  <a href="https://x.com/bronzebase" data-event="outbound_github_click" data-event-detail='{"dest":"x"}'>X @bronzebase</a>
+  <span class="spacer">Bronze Base · one file in, one file out</span>
+</div></footer>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>
